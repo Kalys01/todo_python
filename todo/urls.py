@@ -16,11 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main.views import homepage, test
-from product.views import go
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name = "home"),
     path('test/', test, name = "test"),
-    path('go/', go, name = "go"),
 ]
