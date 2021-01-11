@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /* color: rgb(34, 52, 59); */
+}
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.block-note1 {
+    width: 80%;
+    /* height: 200px; */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+/* Стиль заголовка */
+h1.title {
+    width: 100%;
+    margin: 10px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    letter-spacing: .1em;
+    font: 400 32px sans-serif;
+}
+
+div.input-button {
+    position: relative;
+    width: 80%;
+}
+
+/* Стили инпута */
+.input-text {
+    width: 100%;
+    height: 50px;
+    border-radius: 9999px;
+    position: relative;
+    font: 400 18px sans-serif;
+    padding: 10px 170px 10px 20px;
+    border: 1px solid #00C6FF;
+    letter-spacing: .1em;
+    outline: none;
+}
+
+/* Стили кнопок */
+.btn {
+    width: auto;
+    height: calc(100% - 8px);
+    padding: 4px 20px;
+    letter-spacing: .1em;
+    position: absolute;
+    font: 400 18px sans-serif;
+    border: 2px solid #00C6FF;
+    border-radius: 9999px;
+    outline: none;
+    cursor: pointer;
+}
+button.add{
+    color:#00c6ff;
+    top: 4px;
+    right: 4px;
+    background-image: linear-gradient(to left,transparent,transparent 50%,#00c6ff 50%,#00c6ff);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+    border: 1px solid #00C6FF;
+}
+button.add:hover {
+   background-position: 0 0;
+   color:#fff;
+}
+
+.block-note2 {
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.todo-block {
+    width: 24%;
+    min-height: 100px;
+    padding: 5px;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #00C6FF;
+    margin-bottom: 10px;
+}
+
+/* Выполненные задачи */
+.done {
+    text-decoration: line-through;
+    color: rgb(105, 105, 105);
+}
+
+.fa-check {
+    margin: 5px;
+    position: relative;
+}
+
+.todo-header {
+    width: 100%;
+    display: flex;
+    height: calc(100% - 18px);
+}
+
+/* футер */
+.todo-footer {
+    display: flex;
+    flex-direction: row;
+}
+
+/* дата тайм */
+p.dataTime {
+    font-size: small;
+    flex: 1;
+}
+
+/* иконки */
+.fa {
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+/* Важные задачки */
+.action-button .gold {
+    color: yellow;
+}
