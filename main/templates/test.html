@@ -1,14 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static './style.css' %}">
+    <!-- <script src="main.js" defer></script> -->
+    <script src="https://use.fontawesome.com/d5d85238ea.js" defer></script>
 </head>
 <body>
-    <h2>Это тестовая страница!</h2>
-    {% for todo in todo_list %}
-        <H2>{{ todo.text }} - {{ todo.created_at }}</H2>
-    {% endfor %}
+    <section class="container">
+        <h1 class="title">Список задач</h1>
+        <div class="block-note1">
+            <div class="input-button">
+                <input type="text" id="inpt" class="input-text" placeholder="Введите новую заметку">
+                <button class="btn add" id="btn">Добавить</button>
+            </div>
+        </div>
+        <div class="block-note2">
+            <!-- Здесь создаются новые заметки -->
+            {% for todo in todo_list %}
+            <div class="todo-block">
+                <div class="todo-header">
+                    <i class="fa fa-check crossed-out"></i>
+                    <h4 class="title">{{ todo.text }}</h4>
+                </div>
+                <div class="todo-footer">
+                    <p class="dataTime">{{ todo.created_at }} | 22:06</p>
+                    <div class="action-button">
+                        <i class="fa fa-star star"></i>
+                        <i class="fa fa-trash deleteTodo"></i>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 </body>
 </html>
