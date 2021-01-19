@@ -28,4 +28,4 @@ def delete(request):
     
 def books(request):
     books_list = Book.objects.all()
-    return render(request, "books.html", {"books_list": books_list})
+    return render(request, "books.html", {"book_list": books_list})
