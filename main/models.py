@@ -10,7 +10,7 @@ class ToDo(models.Model):
 class Book(models.Model):
     title = models.CharField('Заголовок', max_length=100)
     subtitle = models.CharField('Подзаголовок', max_length=150)
-    description = models.CharField('Описание', max_length=250)
+    description = models.TextField('Описание', max_length=10000)
     price = models.IntegerField('Цена')
     genre = models.CharField('Жанр', max_length=50)
     author = models.CharField('Автор', max_length=80)
