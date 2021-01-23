@@ -16,3 +16,5 @@ class Book(models.Model):
     author = models.CharField('Автор', max_length=80)
     year = models.DateField('Год_выхода_книг', auto_now_add=False)
     date = models.DateField('Дата', auto_now_add=True)
+
+    

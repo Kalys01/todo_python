@@ -11,8 +11,9 @@
     <div class="container">
         <div class="row">
             <h2 >Добавить новую книгу</h2>
-            <form action="" method="POST">
+            <form action="{% url 'add-books' %}" method="POST">
                 <table class="tabl">
+                    {% csrf_token %}
                     <tr>
                         <td class="des"><span>Заголовок<span class="star"> *</span></span></td>
                         <td class="title"><input class="inpts" type="text" name="title"/></td>
