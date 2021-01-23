@@ -1,20 +1,61 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static './book.css' %}">
 </head>
 <body>
-    {% for book in book_list %}
-    <h2>{{ book.title }}</h2>
-    <h3>{{ book.subtitle }}</h3>
-    <p>{{ book.description }}</p>
-    <p>Цена: {{ book.price }}</p>
-    <p>{{ book.genre }}</p>
-    <p>{{ book.author }}</p>
-    <span>{{ book.date }}</span>
-    <hr/>
-    {% endfor %}
+    <div class="container">
+        <div class="row">
+            <h2 >Добавить новую книгу</h2>
+            <form action="" method="POST">
+                <table class="tabl">
+                    <tr>
+                        <td class="des"><span>Заголовок<span class="star"> *</span></span></td>
+                        <td class="title"><input class="inpts" type="text" name="title"/></td>
+                    </tr>
+                    <tr>
+                        <td class="des"><span>Подзаголовок<span class="star"> *</span></span></td>
+                        <td class="subtitle"><input class="inpts" type="text" name="subtitle"/></td>
+                    </tr>
+                    <tr>
+                        <td class="des"><span>Описание<span class="star"> *</span></span></td>
+                        <td class="description"><textarea name="description" id="" cols="70" rows="10" placeholder="10k строк"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="des"><span>Цена<span class="star"> *</span></span></td>
+                        <td class="price"><input class="inpts" type="number" name="price"/></td>
+                    </tr>
+                    <tr>
+                        <td class="des"><span>Жанр<span class="star"> *</span></span></td>
+                        <td class="genre"><input class="inpts" type="text" name="genre"/></td>
+                    </tr>
+                    <tr>
+                        <td class="des"><span>Автор<span class="star"> *</span></span></td>
+                        <td class="author"><input class="inpts" type="text" name="author"/></td>
+                    </tr>
+                    <tr>
+                        <td class="des"><span>Год выпуска<span class="star"> *</span></span></td>
+                        <td class="year"><input class="inpts" type="date" name="year"/></td>
+                    </tr>
+                </table>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <hr>
+        {% for book in book_list %}
+        <h2>{{ book.title }}</h2>
+        <h3>{{ book.subtitle }}</h3>
+        <p>{{ book.description }}</p>
+        <p>Цена: {{ book.price }}</p>
+        <p>{{ book.genre }}</p>
+        <p>{{ book.author }}</p>
+        <span>{{ book.date }}</span>
+        <hr/>
+        {% endfor %}
+    </div>
 </body>
 </html>

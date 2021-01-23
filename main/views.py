@@ -1,8 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo, Book
 
 def homepage(request):
-    return render(request, "index.html")
+    todo_list = ToDo.objects.all()
+    return render(request, "index.html", {"todo_list": todo_list})
 
 def test(request):
     todo_list = ToDo.objects.all()
@@ -29,3 +30,10 @@ def delete(request):
 def books(request):
     books_list = Book.objects.all()
     return render(request, "books.html", {"book_list": books_list})
+
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]
+    todo = ToDo(text=text)
+    todo.save()
+    return redirect(homepage)
