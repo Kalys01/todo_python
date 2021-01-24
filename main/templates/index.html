@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static './style.css' %}">
     <!-- <script src="main.js" defer></script> -->
-    <!-- <script src="https://use.fontawesome.com/d5d85238ea.js" defer></script> -->
+    <script src="https://use.fontawesome.com/d5d85238ea.js" defer></script>
 </head>
 <body>
     <section class="container">
@@ -32,8 +32,8 @@
                 <div class="todo-footer">
                     <p class="dataTime">{{ todo.created_at }} | 22:06</p>
                     <div class="action-button">
-                        <i class="fa fa-star star"></i>
-                        <i class="fa fa-trash deleteTodo"></i>
+                        <a href=""><i class="fa fa-star star"></i></a>
+                        <a href="{% url 'delete-todo' todo.id %}"><i class="fa fa-trash deleteTodo"></i></a>
                     </div>
                 </div>
             </div>
