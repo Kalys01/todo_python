@@ -66,7 +66,17 @@ def mark_todo(request, id):
     todo.save()
     return redirect(homepage)
 
+# Функции книжного магазина
 def delete_book(request, id):
     book = Book.objects.get(id=id)
     book.delete()
+    return redirect(books)
+
+def mark_book(request, id):
+    book = Book.objects.get(id=id)
+    if book.favorite:
+        book.favorite = False
+    else:
+        book.favorite = True
+    book.save()
     return redirect(books)

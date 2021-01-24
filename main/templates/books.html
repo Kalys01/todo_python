@@ -50,14 +50,18 @@
         <hr>
         {% for book in book_list %}
         <h2>{{ book.title }}</h2>
+        <h3>id: {{ book.id }}</h3>
         <h3>{{ book.subtitle }}</h3>
         <p>{{ book.description }}</p>
-        <p>Цена: {{ book.price }}</p>
-        <p>{{ book.genre }}</p>
-        <p>{{ book.author }}</p>
+        <p>Цена: {{ book.price }} Сом</p>
+        <p>Жанр: {{ book.genre }}</p>
+        <p>Автор: {{ book.author }}</p>
         <div class="action-button">
-            <span>{{ book.date }}</span>
-            <a href="" class="actions-btn"><i class="fa fa-star star"></i></a>
+            <span>Год выпуска книги: {{ book.date }}</span>
+            <a href="{% url 'mark-book' book.id %}" class="actions-btn"><i class="fa fa-star star
+            {% if book.favorite %}
+                gold
+            {% endif %}"></i></a>
             <a href="{% url 'delete-book' book.id %}" class="actions-btn"><i class="fa fa-trash deleteTodo"></i></a>
         </div>
         <hr/>

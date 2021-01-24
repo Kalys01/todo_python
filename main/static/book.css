@@ -45,3 +45,8 @@ a.actions-btn {
     display: flex;
     text-align: right;
 }
+
+
+.action-button .gold {
+    color: rgb(255, 255, 0);
+}
