@@ -56,3 +56,12 @@ def delete_todo(request, id):
     todo = ToDo.objects.get(id=id)
     todo.delete()
     return redirect(homepage)
+
+def mark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    if todo.is_favorite:
+        todo.is_favorite = False
+    else:
+        todo.is_favorite = True
+    todo.save()
+    return redirect(homepage)

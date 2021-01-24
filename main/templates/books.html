@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static './book.css' %}">
+    <script src="https://use.fontawesome.com/d5d85238ea.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -54,7 +55,11 @@
         <p>Цена: {{ book.price }}</p>
         <p>{{ book.genre }}</p>
         <p>{{ book.author }}</p>
-        <span>{{ book.date }}</span>
+        <div class="action-button">
+            <span>{{ book.date }}</span>
+            <a href="" class="actions-btn"><i class="fa fa-star star"></i></a>
+            <a href="" class="actions-btn"><i class="fa fa-trash deleteTodo"></i></a>
+        </div>
         <hr/>
         {% endfor %}
     </div>

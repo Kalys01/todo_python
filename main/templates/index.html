@@ -24,7 +24,11 @@
         <div class="block-note2">
             <!-- Здесь создаются новые заметки -->
             {% for todo in todo_list %}
-            <div class="todo-block">
+            <div class="todo-block
+            {% if todo.is_favorite %}
+                marked
+            {% endif %}
+            ">
                 <div class="todo-header">
                     <i class="fa fa-check crossed-out"></i>
                     <h4 class="title">{{ todo.text }}</h4>
@@ -32,8 +36,11 @@
                 <div class="todo-footer">
                     <p class="dataTime">{{ todo.created_at }} | 22:06</p>
                     <div class="action-button">
-                        <a href=""><i class="fa fa-star star"></i></a>
-                        <a href="{% url 'delete-todo' todo.id %}"><i class="fa fa-trash deleteTodo"></i></a>
+                        <a href="{% url 'mark-todo' todo.id %}" class="actions-btn"><i class="fa fa-star star
+                        {% if todo.is_favorite %}
+                            gold
+                        {% endif %}"></i></a>
+                        <a href="{% url 'delete-todo' todo.id %}" class="actions-btn"><i class="fa fa-trash deleteTodo"></i></a>
                     </div>
                 </div>
             </div>

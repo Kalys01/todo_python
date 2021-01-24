@@ -125,7 +125,10 @@ p.dataTime {
     font-size: small;
     flex: 1;
 }
-
+a.actions-btn {
+    text-decoration: none;
+    color: #000;
+}
 /* иконки */
 .fa {
     margin: 0 4px;
@@ -134,5 +137,5 @@ p.dataTime {
 
 /* Важные задачки */
 .action-button .gold {
-    color: yellow;
+    color: rgb(255, 255, 0);
 }
