@@ -58,7 +58,7 @@
         <div class="action-button">
             <span>{{ book.date }}</span>
             <a href="" class="actions-btn"><i class="fa fa-star star"></i></a>
-            <a href="" class="actions-btn"><i class="fa fa-trash deleteTodo"></i></a>
+            <a href="{% url 'delete-book' book.id %}" class="actions-btn"><i class="fa fa-trash deleteTodo"></i></a>
         </div>
         <hr/>
         {% endfor %}

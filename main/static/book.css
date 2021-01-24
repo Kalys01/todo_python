@@ -34,4 +34,14 @@ input.inpts {
     height: 28px;
     margin: 3px 0 3px 0;
 }
-
+.action-button {
+    display: flex;
+}
+a.actions-btn {
+    text-decoration: none;
+    color: #000;
+}
+.actions-btn {
+    display: flex;
+    text-align: right;
+}
