@@ -88,3 +88,12 @@ def mark_book(request, id):
         book.favorite = True
     book.save()
     return redirect(books)
+
+def close_book(request, id):
+    book = Book.objects.get(id=id)
+    if book.is_closed:
+        book.is_closed = False
+    else:
+        book.is_closed = True
+    book.save()
+    return redirect(books)

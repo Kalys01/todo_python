@@ -17,5 +17,6 @@ class Book(models.Model):
     years = models.DateField('Год_выхода_книг', auto_now_add=False)
     date = models.DateField('Дата', auto_now_add=True)
     favorite = models.BooleanField(default=False)
+    is_closed = models.BooleanField(default=False)
 
     

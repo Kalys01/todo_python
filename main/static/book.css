@@ -46,6 +46,10 @@ a.actions-btn {
     text-align: right;
 }
 
+.done {
+    text-decoration: line-through;
+    color: rgb(105, 105, 105);
+}
 
 .action-button .gold {
     color: rgb(255, 255, 0);
