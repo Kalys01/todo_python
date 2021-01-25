@@ -101,6 +101,7 @@ button.add:hover {
 .done {
     text-decoration: line-through;
     color: rgb(105, 105, 105);
+    background: #acb3b6;
 }
 
 .fa-check {
@@ -138,4 +139,8 @@ a.actions-btn {
 /* Важные задачки */
 .action-button .gold {
     color: rgb(255, 255, 0);
+}
+
+.marked {
+    background: rgb(240, 177, 106);
 }

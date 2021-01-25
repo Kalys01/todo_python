@@ -25,13 +25,23 @@
             <!-- Здесь создаются новые заметки -->
             {% for todo in todo_list %}
             <div class="todo-block
-            {% if todo.is_favorite %}
+            {% if todo.is_closed %}
+                done
+            {% elif todo.is_favorite %}
                 marked
             {% endif %}
             ">
                 <div class="todo-header">
-                    <i class="fa fa-check crossed-out"></i>
-                    <h4 class="title">{{ todo.text }}</h4>
+                    {% if todo.is_closed %}
+                        <a href="{% url 'close-todo' todo.id %}" class="actions-btn"><i class="fa fa-times crossed-out"></i></a>
+                    {% else %}
+                        <a href="{% url 'close-todo' todo.id %}" class="actions-btn"><i class="fa fa-check crossed-out"></i></a> 
+                    {% endif %}
+                    <h4 class="title
+                    {% if todo.is_closed %}
+                        dones
+                    {% endif %}
+                    ">{{ todo.text }}</h4>
                 </div>
                 <div class="todo-footer">
                     <p class="dataTime">{{ todo.created_at }} | 22:06</p>
